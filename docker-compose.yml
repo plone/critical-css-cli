@@ -5,4 +5,5 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - URL
+      - URL:$URL
+      - PORT:$PORT
