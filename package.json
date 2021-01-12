@@ -1,0 +1,16 @@
+{
+  "name": "critical-css-generator",
+  "version": "1.0.0",
+  "description": "Docker service to generate critical css from any url",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "critical": "^2.0.1",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}

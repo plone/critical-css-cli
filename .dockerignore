@@ -1,0 +1,7 @@
+.git
+*.pyc
+*.log
+.env
+*.pid
+*.code-workspace
+node_modules
