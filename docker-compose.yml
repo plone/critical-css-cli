@@ -1,7 +1,7 @@
 version: "2"
 services:
   critical:
-    image: nileshgulia/critical-css-generator:latest
+    image: nileshgulia/critical-css-generator:v0.0.1
     #build: .
     ports:
       - "3000:3000"
