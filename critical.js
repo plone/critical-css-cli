@@ -2,7 +2,15 @@
 
 const critical = require("critical");
 
-const generateCritical = async (url) => {
+const generateCritical = async (url, size, location) => {
+  const dimensions = size.split(",").map((item) => {
+    const val = item.trim().split("x");
+    return {
+      width: val[0],
+      height: val[1],
+    };
+  });
+
   console.log("generating critical css for", url);
   const { css, html, uncritical } = await critical.generate({
     strict: false,
@@ -10,29 +18,14 @@ const generateCritical = async (url) => {
     minify: false,
     base: "build",
     src: url,
+    target: {
+      css: location,
+    },
     penthouse: {
       timeout: 40000,
       pageLoadSkipTimeout: 30000,
     },
-    dimensions: [
-      {
-        // these can also be taken from env
-        height: 375,
-        width: 812,
-      },
-      {
-        height: 768,
-        width: 1024,
-      },
-      {
-        height: 1280,
-        width: 800,
-      },
-      {
-        height: 1980,
-        width: 1280,
-      },
-    ],
+    dimensions,
   });
 
   console.log(`done!`);

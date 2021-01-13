@@ -1,4 +1,4 @@
-FROM node:14.15.4
+FROM node:14
 
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
 
