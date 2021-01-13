@@ -8,7 +8,7 @@ const generateCritical = async (url) => {
     strict: false,
     rebase: false,
     minify: false,
-    base: "dist",
+    base: "build",
     src: url,
     penthouse: {
       timeout: 40000,

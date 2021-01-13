@@ -6,4 +6,3 @@ services:
       - "3000:3000"
     environment:
       - URL:$URL
-      - PORT:$PORT
