@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 "use strict";
-const generator = require("./critical-generator");
+const generator = require("./critical");
 const url = process.env.URL;
 
 generator
