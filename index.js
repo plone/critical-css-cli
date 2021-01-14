@@ -8,9 +8,7 @@ const location = process.env.LOCATION || "/var/app/output/critical.css";
 
 generator
   .generateCritical(url, dimensions, location)
-  .then((css) => {
-    console.log(css);
-  })
+  .then((css) => {})
   .catch((err) => {
     // console.error(err);
     console.error(err.name);

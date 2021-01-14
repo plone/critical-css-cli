@@ -16,10 +16,9 @@ const generateCritical = async (url, size, location) => {
     strict: false,
     rebase: false,
     minify: false,
-    base: "build",
     src: url,
     target: {
-      css: location,
+      css: __dirname + location,
     },
     penthouse: {
       timeout: 40000,
@@ -28,7 +27,7 @@ const generateCritical = async (url, size, location) => {
     dimensions,
   });
 
-  console.log(`done!`);
+  console.log(`Done. critical.css saved in ${location} `);
   return css;
 };
 
