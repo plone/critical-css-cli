@@ -4,7 +4,7 @@
 const generator = require("./critical");
 const url = process.env.URL;
 const dimensions = process.env.DIMENSIONS || "1300x900";
-const location = process.env.LOCATION || "/var/app/output/critical.css";
+const location = process.env.LOCATION || "/output/critical.css";
 
 generator
   .generateCritical(url, dimensions, location)
