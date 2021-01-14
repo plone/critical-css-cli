@@ -12,18 +12,18 @@ URL=<website-url> docker-compose up
 
 #### Config
 
-pass the `DIMENSIONS` env variable if you want to deliver critical CSS for multiple screen resolutions. Defaults to `1300x900` if you don't want.
+Pass the `DIMENSIONS` env variable if you want to deliver critical CSS for multiple screen resolutions. Defaults to `1300x900` if you don't want.
 
 ```
 URL=<website-url> DIMENSIONS="1220x300,1345x500" docker-compose up
 
 ```
 
-Location to save the `critical.css` file. Defaults to `/output/critical.css`
+Location to save the `critical.css` file. Defaults to `/output`
 
 ```
-URL=<website-url> LOCATION=<your-dir>/critical.css docker-compose up
+URL=<website-url> LOCATION=/<your-dir> docker-compose up
 
 ```
 
-the location is relative to the current directory.
+The location is relative to the current directory.
