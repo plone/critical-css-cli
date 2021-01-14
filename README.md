@@ -19,7 +19,7 @@ URL=<website-url> DIMENSIONS="1220x300,1345x500" docker-compose up
 
 ```
 
-Location to save the `critical.css` file. Defaults to `/var/app/output/critical.css`
+Location to save the `critical.css` file. Defaults to `/output/critical.css`
 
 ```
 URL=<website-url> LOCATION=<your-dir>/critical.css docker-compose up

@@ -6,8 +6,8 @@ const generateCritical = async (url, size, location) => {
   const dimensions = size.split(",").map((item) => {
     const val = item.trim().split("x");
     return {
-      width: val[0],
-      height: val[1],
+      width: parseInt(val[0]),
+      height: parseInt(val[1]),
     };
   });
 

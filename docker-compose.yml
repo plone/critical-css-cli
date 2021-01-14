@@ -1,11 +1,10 @@
 version: "2"
 services:
   critical:
-    image: nileshgulia/critical-css-generator:v0.0.2
-    #build: .
-    ports:
-      - "3000:3000"
+    build: .
     environment:
-      - URL=${URL:?err}
-      - DIMENSIONS=$DIMENSIONS
-      - LOCATION=$LOCATION
+      - URL
+      - DIMENSIONS
+      - LOCATION
+    volumes:
+      - ./output:/var/app/output/
