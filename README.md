@@ -9,8 +9,10 @@ Either install it as a native package with: `yarn install` or `npm install`.
 Then run the generator like:
 
 ```
-bin/critical-generator -o output https://biodiversity.europa.eu/ https://www.eea.europa.eu/
+bin/critical-generator -o ./out/ https://biodiversity.europa.eu/ https://www.eea.europa.eu/
 ```
+
+This will generate a file called `critical.css` in the `out` folder.
 
 Run `bin/critical-generator -h` to see full options.
 
@@ -29,14 +31,12 @@ Pass the `DIMENSIONS` env variable if you want to deliver critical CSS for multi
 
 ```
 URL=<website-url> DIMENSIONS="1220x300,1345x500" docker-compose up
-
 ```
 
 Location to save the `critical.css` file. Defaults to `/var/app/output`
 
 ```
 URL=<website-url> LOCATION=/<your-dir> docker-compose up
-
 ```
 
 The location is relative to the current directory.
