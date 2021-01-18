@@ -11,7 +11,7 @@ const generateCritical = async (url, size, output) => {
     }
   })
 
-  console.log('Generating critical css for: ', url)
+  console.log('Generating critical css for:', url)
 
   // also available: html, uncritical
   const { css } = await critical.generate({

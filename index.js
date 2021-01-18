@@ -1,5 +1,3 @@
-'use strict'
-
 const generator = require('./critical')
 const path = require('path')
 const pkgJson = require(path.join(__dirname, 'package.json'))
@@ -30,29 +28,31 @@ function main (urls, options) {
 
   let { dimensions, output } = options
   dimensions = dimensions || '1300x900'
-  output = output ?? './'
+  output = output ?? './critical.css'
+
+  if (!output.endsWith('css')) {
+    throw new Error('Output location needs to be a file path like /var/output/output.css')
+  }
 
   const promises = urls.map((url, index) => {
     const fname = `critical-partial-${index}.css`
     const promise = generator
-      .generateCritical(url, dimensions, path.join(output, fname))
+      .generateCritical(url, dimensions, path.join(path.dirname(output), fname))
     return promise
   })
 
   let css
 
   Promise.all(promises).then(allCss => {
-    console.log(allCss.length)
+    console.log(`Processing ${allCss.length} css fragment(s)`)
 
     css = allCss.join(';\n')
-    const fpath = path.join(output, 'critical.css')
 
-    minifyCss(css, fpath).then(result => {
+    minifyCss(css, output).then(result => {
       console.log(`Generated ${result.css.length} bytes`)
-      fs.outputFile(fpath, result.css)
+      fs.outputFile(output, result.css)
+      console.log('Done, will shut down')
     })
-
-    console.log('Done, will shut down')
   })
     .catch((err) => {
       console.error(err.name)

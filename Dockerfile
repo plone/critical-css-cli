@@ -22,4 +22,5 @@ RUN yarn install
 COPY . /var/app/
 
 ENTRYPOINT ["/var/app/entrypoint.sh"]
+USER node
 CMD ["run"]

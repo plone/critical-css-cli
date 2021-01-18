@@ -5,6 +5,6 @@ services:
     environment:
       - URL
       - DIMENSIONS
-      - LOCATION: ${LOCATION:-/var/app/output/}
+      - LOCATION: ${LOCATION:-/var/app/output/critical.css}
     volumes:
       - ./output:/var/app/output/

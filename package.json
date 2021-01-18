@@ -1,10 +1,10 @@
 {
-  "name": "critical-css-generator-cli",
+  "name": "@eeacms/critical-css-cli",
   "version": "1.0.0",
   "description": "A CLI to generate critical css from any url",
   "main": "index.js",
   "bin": {
-    "critical-generator": "./bin/critical-generator"
+    "critical-cli": "./bin/critical-cli"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
