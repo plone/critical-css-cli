@@ -19,9 +19,9 @@ const generateCritical = async (url, size, output) => {
     rebase: false,
     minify: true,
     src: url,
-    target: {
-      css: output
-    },
+    // target: {
+    //   css: output
+    // },
     penthouse: {
       timeout: 40000,
       pageLoadSkipTimeout: 30000
@@ -29,7 +29,7 @@ const generateCritical = async (url, size, output) => {
     dimensions
   })
 
-  console.log(`Done. Critical css saved in ${output}`)
+  console.log(`Done (${url})`)
   return css
 }
 
