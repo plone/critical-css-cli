@@ -8,13 +8,16 @@
     "lint": "eslint --fix ."
   },
   "bin": {
-    "critical-generator": "./index.js"
+    "critical-generator": "./bin/critical-generator"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "commander": "^7.0.0",
-    "critical": "^2.0.1"
+    "critical": "^2.0.1",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "postcss": "^8.2.4"
   },
   "devDependencies": {
     "eslint": "^7.18.0",
@@ -22,6 +25,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1"
+    "eslint-plugin-promise": "^4.2.1",
+    "postcss-cli": "^8.3.1"
   }
 }

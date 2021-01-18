@@ -2,11 +2,7 @@
 
 const critical = require('critical')
 
-const DEFAULT_OUTPUT = '/var/app/output/'
-
-const generateCritical = async (url, size, location) => {
-  location = location ?? process.env.LOCATION ?? DEFAULT_OUTPUT
-
+const generateCritical = async (url, size, output) => {
   const dimensions = size.split(',').map((item) => {
     const val = item.trim().split('x')
     return {
@@ -24,7 +20,7 @@ const generateCritical = async (url, size, location) => {
     minify: true,
     src: url,
     target: {
-      css: __dirname + `${location}/critical.css`
+      css: output
     },
     penthouse: {
       timeout: 40000,
@@ -33,7 +29,7 @@ const generateCritical = async (url, size, location) => {
     dimensions
   })
 
-  console.log(`Done. Critical css saved in ${location}/critical.css`)
+  console.log(`Done. Critical css saved in ${output}`)
   return css
 }
 
