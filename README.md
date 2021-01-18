@@ -1,6 +1,22 @@
 # @eeacms/critical-css-cli
 
-A command-line utility to generate critical CSS from a set of URLs.
+A command-line utility to generate critical CSS from a set of URLs. The
+scenario where this fits is that of a CMS-powered website, where pages are
+user-defined, with multiple styles coming from various addons. Because the
+website layout is generated based on the CMS content, it would be impossible to
+understand what is Critical CSS at build time, only once the website is moved
+to production and the "dust settles" on the main pages structure.
+
+Typically, for the best possible performance, you'd want to generate the
+critical CSS as short as possible and that means one CSS per separate page.
+But this complicates things: async runners, file refresh, file invalidations,
+etc, would have to be taken into account. This raises the barrier of entry for
+the project.
+
+This package tries to keep things really simple by accepting some limitations.
+That is, a single CSS file is generated based on multiple provided URLs. The
+CSS is optimized automatically using postcss and nanocss, so duplicated rules
+are eliminated.
 
 ## Install globally
 
