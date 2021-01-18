@@ -1,14 +1,14 @@
 {
-  "name": "critical-css-generator",
+  "name": "critical-css-generator-cli",
   "version": "1.0.0",
-  "description": "Docker service to generate critical css from any url",
+  "description": "A CLI to generate critical css from any url",
   "main": "index.js",
+  "bin": {
+    "critical-generator": "./bin/critical-generator"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix ."
-  },
-  "bin": {
-    "critical-generator": "./bin/critical-generator"
   },
   "author": "",
   "license": "ISC",
