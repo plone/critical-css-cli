@@ -4,11 +4,29 @@
   "description": "Docker service to generate critical css from any url",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix ."
+  },
+  "bin": {
+    "critical-generator": "./bin/critical-generator"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "critical": "^2.0.1"
+    "commander": "^7.0.0",
+    "critical": "^2.0.1",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "fs-extra": "^9.0.1",
+    "postcss": "^8.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "postcss-cli": "^8.3.1"
   }
 }

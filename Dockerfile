@@ -21,5 +21,5 @@ COPY ./yarn.lock /var/app/
 RUN yarn install
 COPY . /var/app/
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/var/app/entrypoint.sh"]
 CMD ["run"]
