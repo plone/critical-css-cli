@@ -5,10 +5,11 @@ const fs = require('fs-extra')
 
 const postcss = require('postcss')
 const postcssrc = require('postcss-load-config')
+const atImport = require('./postcss-remove-imports')
 
 const { version } = pkgJson
 
-function minifyCss (css, file) {
+function processCss (css, file) {
   const ctx = {}
 
   return postcssrc(ctx)
@@ -16,6 +17,7 @@ function minifyCss (css, file) {
       const options = { ...config.options }
       options.from = undefined
       return postcss(config.plugins)
+        .use(atImport({}))
         .process(css, options)
     })
     .catch((err) => {
@@ -48,7 +50,7 @@ function main (urls, options) {
 
     css = allCss.join(';\n')
 
-    minifyCss(css, output).then(result => {
+    processCss(css, output).then(result => {
       console.log(`Generated ${result.css.length} bytes`)
       fs.outputFile(output, result.css)
       console.log('Done, will shut down')
