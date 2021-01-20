@@ -1,4 +1,4 @@
-# @eeacms/critical-css-cli
+# @plonecollective/critical-css-cli
 
 A command-line utility to generate critical CSS from a set of URLs. The
 functionality is useful for a CMS-powered website, where pages are user-defined
@@ -21,7 +21,7 @@ optimized automatically using [postcss](https://postcss.org/) and
 ## Install globally
 
 ```
-npm install -g eea/critical-css-cli
+npm install -g @plonecollective/critical-css-cli
 ```
 
 ## Install from this repo

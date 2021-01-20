@@ -1,5 +1,5 @@
 {
-  "name": "@eeacms/critical-css-cli",
+  "name": "@plonecollective/critical-css-cli",
   "version": "1.0.0",
   "description": "A CLI to generate critical css from any url",
   "main": "index.js",
