@@ -59,7 +59,7 @@ Location to save the `critical.css` file. Defaults to
 `/var/app/output/critical.css`
 
 ```
-URL=<website-url> LOCATION=/<your-dir> docker-compose up
+URL=<website-url> LOCATION="output/<your-dir>/critical.css" docker-compose up
 ```
 
 The location is relative to the current directory.

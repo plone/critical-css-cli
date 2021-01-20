@@ -14,13 +14,12 @@ RUN apt-get update \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/opt/google/chrome-unstable/chrome
 
-RUN mkdir /var/app && chown www-data:www-data /var/app
-WORKDIR /var/app
+RUN mkdir /var/app && chown -R root /var/app/
+WORKDIR /var/app/
 COPY ./package.json /var/app/
 COPY ./yarn.lock /var/app/
 RUN yarn install
 COPY . /var/app/
 
 ENTRYPOINT ["/var/app/entrypoint.sh"]
-USER node
 CMD ["run"]

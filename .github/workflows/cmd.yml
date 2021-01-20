@@ -1,0 +1,44 @@
+name: critical-css CLI
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    #node version
+    strategy:
+      matrix:
+        node-version: [14.x]
+    env:
+      url: http://biodiversity.europa.eu/
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+        # install deps
+      - name: install dependencies
+        run: yarn install
+
+      - name: Run CLI
+        run: bin/critical-cli ${{env.url}}
+
+      - name: Check existence of critical css
+        id: check_css
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "critical.css"
+          allow_failure: true
+
+        # Docker test
+      - name: Docker Build and run
+        run: LOCATION="output/critical.css" DIMENSION="2424x454" URL=${{env.url}} docker-compose up
+
+      - name: Check existence of critical css generated from docker
+        id: check_css_docker
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "output/critical.css"
+          allow_failure: true

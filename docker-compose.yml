@@ -4,7 +4,7 @@ services:
     build: .
     environment:
       - URL
-      - DIMENSIONS
-      - LOCATION: ${LOCATION:-/var/app/output/critical.css}
+      - DIMENSION
+      - LOCATION
     volumes:
       - ./output:/var/app/output/
