@@ -1,4 +1,4 @@
-# @plonecollective/critical-css-cli
+# @plone/critical-css-cli
 
 A command-line utility to generate critical CSS from a set of URLs. The
 functionality is useful for a CMS-powered website, where pages are user-defined
@@ -21,7 +21,13 @@ optimized automatically using [postcss](https://postcss.org/) and
 ## Install globally
 
 ```
-npm install -g @plonecollective/critical-css-cli
+npm install -g @plone/critical-css-cli
+```
+
+Then you can use it like:
+
+```
+critical-cli -h
 ```
 
 ## Install from this repo
@@ -31,7 +37,7 @@ Either install it as a native package with: `yarn install` or `npm install`.
 Then run the generator like:
 
 ```
-bin/critical-cli -o ./out/critical.css https://biodiversity.europa.eu/ https://www.eea.europa.eu/
+bin/critical-cli -o ./out/critical.css https://plone.org
 ```
 
 This will generate a file called `critical.css` in the `out` folder.
@@ -56,7 +62,7 @@ URL=<website-url> DIMENSIONS="1220x300,1345x500" docker-compose up
 ```
 
 Location to save the `critical.css` file. Defaults to
-`/var/app/output/critical.css`
+`/var/app/output/critical.css` (inside the docker container)
 
 ```
 URL=<website-url> LOCATION="output/<your-dir>/critical.css" docker-compose up

@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix ."
   },
-  "author": "",
+  "author": "Eaudeweb, EEA",
   "license": "MIT",
   "dependencies": {
     "commander": "^7.0.0",
