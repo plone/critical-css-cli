@@ -2,6 +2,7 @@
   "name": "@plone/critical-css-cli",
   "version": "1.0.0",
   "description": "A CLI to generate critical css from any url",
+  "homepage": "https://www.npmjs.com/package/@plone/critical-css-cli",
   "main": "index.js",
   "bin": {
     "critical-cli": "./bin/critical-cli"
@@ -14,6 +15,14 @@
   },
   "author": "Eaudeweb, EEA",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plone/critical-css-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plone/critical-css-cli/issues",
+    "email": "plone-developers@lists.sourceforge.net"
+  },
   "release-it": {
     "hooks": {
       "after:bump": "node changelogupdater.js bump ${version}",
