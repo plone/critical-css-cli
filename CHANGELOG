@@ -1,5 +1,8 @@
 # Change Log
 
 ## 1.0.0 (2021-01-21)
+- Add postcss-load-config as package dependency, remove postcss-cli from devDepednencies  @tiberiuichim
+
+## 1.0.0 (2021-01-21)
 
 - Initial release
