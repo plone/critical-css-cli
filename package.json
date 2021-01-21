@@ -46,6 +46,7 @@
     "cssnano-preset-advanced": "^4.0.7",
     "fs-extra": "^9.0.1",
     "postcss": "^8.2.4",
+    "postcss-load-config": "^3.0.0",
     "release-it": "14.2.1"
   },
   "devDependencies": {
@@ -54,7 +55,6 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "postcss-cli": "^8.3.1"
+    "eslint-plugin-promise": "^4.2.1"
   }
 }
