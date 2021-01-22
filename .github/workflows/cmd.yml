@@ -9,7 +9,7 @@ jobs:
       matrix:
         node-version: [14.x]
     env:
-      url: http://biodiversity.europa.eu/
+      url: http://plone.org/
 
     steps:
       - uses: actions/checkout@v2

@@ -11,14 +11,12 @@ const { version } = pkgJson
 
 function processCss (css, file) {
   const ctx = {}
-
-  return postcssrc(ctx)
+  const configPath = path.resolve(__dirname, 'postcss.config.js')
+  return postcssrc(ctx, configPath)
     .then((config) => {
       const options = { ...config.options }
       options.from = undefined
-      return postcss(config.plugins)
-        .use(atImport({}))
-        .process(css, options)
+      return postcss(config.plugins).use(atImport({})).process(css, options)
     })
     .catch((err) => {
       throw err
@@ -33,29 +31,35 @@ function main (urls, options) {
   output = output ?? './critical.css'
 
   if (!output.endsWith('css')) {
-    throw new Error('Output location needs to be a file path like /var/output/output.css')
+    throw new Error(
+      'Output location needs to be a file path like /var/output/output.css'
+    )
   }
 
   const promises = urls.map((url, index) => {
     const fname = `critical-partial-${index}.css`
-    const promise = generator
-      .generateCritical(url, dimensions, path.join(path.dirname(output), fname))
+    const promise = generator.generateCritical(
+      url,
+      dimensions,
+      path.join(path.dirname(output), fname)
+    )
     return promise
   })
 
   let css
 
-  Promise.all(promises).then(allCss => {
-    console.log(`Processing ${allCss.length} css fragment(s)`)
+  Promise.all(promises)
+    .then((allCss) => {
+      console.log(`Processing ${allCss.length} css fragment(s)`)
 
-    css = allCss.join(';\n')
+      css = allCss.join(';\n')
 
-    processCss(css, output).then(result => {
-      console.log(`Generated ${result.css.length} bytes`)
-      fs.outputFile(output, result.css)
-      console.log('Done, will shut down')
+      processCss(css, output).then((result) => {
+        console.log(`Generated ${result.css.length} bytes`)
+        fs.outputFile(output, result.css)
+        console.log('Done, will shut down')
+      })
     })
-  })
     .catch((err) => {
       console.error(err.name)
       console.error(err.message)
@@ -71,7 +75,8 @@ program
   .option('-o, --output <output>', 'Output directory')
   .option(
     '-d, --dimensions <dimensions>',
-    'Comma-separated dimension rectangles, like "1300x900,1600x1000"')
+    'Comma-separated dimension rectangles, like "1300x900,1600x1000"'
+  )
   .action(main)
 
 program.parse(process.args, process.argv)
