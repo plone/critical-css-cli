@@ -6,6 +6,10 @@
 
 ### Changes
 
+### Bug fix
+
+- Fix problem with resolving postcss config when installed as a global package @nileshgulia1 @tiberiuichim
+
 ## 1.0.1 (2021-01-21)
 
 ### Added
