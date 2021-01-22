@@ -2,11 +2,7 @@
 
 ## 1.0.2 (unreleased)
 
-### Added
-
 ### Changes
-
-### Bug fix
 
 - Fix problem with resolving postcss config when installed as a global package @nileshgulia1 @tiberiuichim
 
