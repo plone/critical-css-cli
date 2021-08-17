@@ -1,10 +1,16 @@
 # Change Log
 
-## 1.0.2 (unreleased)
+## 1.0.3 (unreleased)
 
 ### Added
 
 ### Changes
+
+## 1.0.2 (2021-01-22)
+
+### Changes
+
+- Fix problem with resolving postcss config when installed as a global package @nileshgulia1 @tiberiuichim
 
 ## 1.0.1 (2021-01-21)
 

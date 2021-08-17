@@ -1,6 +1,6 @@
 {
   "name": "@plone/critical-css-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI to generate critical css from any url",
   "homepage": "https://www.npmjs.com/package/@plone/critical-css-cli",
   "main": "index.js",
@@ -29,7 +29,7 @@
   "release-it": {
     "hooks": {
       "after:bump": "node changelogupdater.js bump ${version}",
-      "after:release": "node changelogupdater.js back ${version} && git add . && git commit -am 'Back to development' && git push"
+      "after:release": "node changelogupdater.js back ${version} && git commit -am 'Back to development' && git push"
     },
     "git": {
       "changelog": "node changelogupdater.js excerpt",
