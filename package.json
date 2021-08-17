@@ -7,6 +7,9 @@
   "bin": {
     "critical-cli": "./bin/critical-cli"
   },
+  "engines": {
+    "node": "^10 || ^12 || ^14"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix .",
