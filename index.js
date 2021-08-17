@@ -28,7 +28,7 @@ function main (urls, options) {
 
   let { dimensions, output } = options
   dimensions = dimensions || '1300x900'
-  output = output ?? './critical.css'
+  output = output || './critical.css'
 
   if (!output.endsWith('css')) {
     throw new Error(
