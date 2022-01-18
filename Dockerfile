@@ -1,4 +1,4 @@
-FROM node:14
+FROM --platform=linux/amd64 node:14
 
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
 
